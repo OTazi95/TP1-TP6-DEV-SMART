@@ -43,4 +43,4 @@ sentiment-app/
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
 | Membre A | TAZI Omar | Otazi95 | Installation dependances, reponse cadrage 1|
-| Membre B | [Nom 2] | [@login] | |
+| Membre B | erragragui meriam | merragragui | Installation dependances, reponse cadrage 2 |

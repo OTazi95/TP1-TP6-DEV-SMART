@@ -3,10 +3,10 @@
 > Remplir chaque rubrique en une à trois phrases. Les rubriques marquées (obligatoire) sont vérifiées par `pytest`.
 
 ## Besoin en une phrase (obligatoire)
-Pouvoir repondre a n'importe quelle question en relation avec le réglement intérieur.
+Offrir un outil capable de répondre à toute question portant sur le règlement intérieur, de façon claire et conforme au texte officiel.
 
 ## Utilisateur final (obligatoire)
-L'utilisateur qui a eu la reponse a sa question sur le réglement interieur. 
+Toute personne concernée par le règlement intérieur, qui souhaite obtenir une réponse précise à sa question sur les règles en vigueur.
 
 ## Approche retenue (obligatoire)
 
@@ -18,19 +18,19 @@ Cocher une seule case :
 - [ ] Modèle génératif seul
 
 ## Justification (obligatoire, citer au moins deux critères de la grille : (a) données étiquetées, (b) vérifiabilité, (c) coût par requête, (d) conséquence d'une erreur)
-(b) Il facilement fesable de verifier si la reponse est correct ou pas car nous disposant de l'ensemble des régles (d) Une mauvaise reponse peut provoqué un malentendue, la conséquence est assez grave.
+(b) Vérifiabilité : on peut aisément contrôler si une réponse est exacte, puisque l'intégralité du règlement est disponible et peut être comparée à ce que l'outil affirme. (d) Conséquence d'une erreur : une réponse fausse risque de créer des incompréhensions, voire des sanctions injustifiées, ce qui rend l'erreur plutôt grave.
 
 ## Données nécessaires et leur origine (obligatoire)
-L'import des diferents données issue du reglement interieur (Ce qui est permis ce qui ne l'est pas, les conséquances des differentes actions).
+Le contenu complet du règlement intérieur, à importer depuis le document officiel : les comportements autorisés, ceux qui sont interdits et les sanctions prévues pour chaque manquement.
 
 ## Métrique de succès et seuil d'acceptation (obligatoire)
-F1 macro sur un jeu de test tenu à l'écart ; acceptation à partir de 0,85, avec un rappel d'au moins 0,90 sur les regles tres importantes et essentielles.
+F1 macro calculé sur un jeu de test mis de côté ; le système est accepté à partir de 0,85, avec un rappel minimum de 0,90 pour les règles les plus importantes et essentielles.
 
 ## Conséquence d'une erreur et validation humaine prévue (obligatoire)
-Une erreur de reponse sur le reglement interieur peut provoquer un malentendue et des incomprehension majeur, Il faut imperativement ce refere aux regles si une reponse parait suspect.
+Une réponse erronée peut entraîner de graves malentendus. Lorsqu'une réponse semble douteuse, il est indispensable de la confronter au texte du règlement ou de demander l'avis d'un responsable.
 
 ## Risques éthiques ou de confidentialité (obligatoire)
-Les regles sont applicable a tout le monde abstraction faite suir la peronne ou l'entite en question.
+Le règlement s'applique de la même façon à tous, quelle que soit la personne ou la structure concernée. Les données utilisées sont des règles générales et ne contiennent pas d'informations personnelles.
 
 ## Approche écartée et pourquoi (facultatif)
-
+Modèle génératif seul : il pourrait inventer des règles inexistantes et ne serait pas capable d'indiquer la source de sa réponse, ce qui est risqué ici.
