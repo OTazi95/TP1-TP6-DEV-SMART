@@ -3,12 +3,12 @@
 L'API n'entraîne rien et ne connaît pas scikit-learn : elle appelle la fonction
 predict() de src/predict.py, qui charge models/sentiment.joblib une seule fois.
 """
-import sys
-from pathlib import Path
+import logging
 
-RACINE = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(RACINE / "src"))
-from predict import MODELE, charger_modele, predict as _predict  # noqa: E402  (fonctions du TP2)
+from sentiment_app.predict import charger_modele
+from sentiment_app.predict import predict as _predict
+
+logger = logging.getLogger("sentiment_api")
 
 
 class SentimentClassifier:
@@ -20,9 +20,17 @@ class SentimentClassifier:
         charger_modele()  # échoue immédiatement si le joblib manque : on ne démarre pas sans modèle
 
     def predict(self, text: str) -> dict:
-        """Renvoie {'label': 'POSITIVE'|'NEGATIVE', 'score': float, 'text': aperçu}."""
+        """Renvoie {'label': 'POSITIVE'|'NEGATIVE'|'INDETERMINE', 'score': float, 'text': aperçu}."""
         r = _predict(text)  # lève ValueError si le texte est vide
-        return {"label": r["label"].upper(), "score": r["score"], "text": text[:100]}
+        
+        score = r["score"]
+        label = r["label"].upper()
+        
+        # Seuil d'abstention
+        if score < 0.60:
+            label = "INDETERMINE"
+
+        return {"label": label, "score": score, "text": text[:100]}
 
 
 def load_model() -> SentimentClassifier:
